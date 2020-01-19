@@ -1,0 +1,72 @@
+<h1 style="text-align:center">
+  Register Form
+</h1>
+<div class="login">
+  <h2 class="login-header">Register User</h2>
+  <form [formGroup]="registerForm" class="login-container" (ngSubmit)="register()">
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.firstName.errors }">
+      <input type="text" placeholder="First Name" formControlName="firstName">
+    </p>
+    <div *ngIf="isSubmitted && formControls.firstName.errors" class="help-block">
+      <div *ngIf="formControls.firstName.errors.required">First name is required</div>
+    </div>
+
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.middleName.errors }">
+      <input type="text" placeholder="Middle Name" formControlName="middleName">
+    </p>
+    <div *ngIf="isSubmitted && formControls.middleName.errors" class="help-block">
+      <div *ngIf="formControls.middleName.errors.required">Middle name is required</div>
+    </div>
+
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.lastName.errors }">
+      <input type="text" placeholder="Last Name" formControlName="lastName">
+    </p>
+    <div *ngIf="isSubmitted && formControls.lastName.errors" class="help-block">
+      <div *ngIf="formControls.lastName.errors.required">Last name is required</div>
+    </div>
+
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.mobile.errors }">
+      <input type="number" placeholder="Mobile No" formControlName="mobile">
+    </p>
+    <div *ngIf="isSubmitted && formControls.mobile.errors" class="help-block">
+      <div *ngIf="formControls.mobile.errors.required">Mobile is required</div>
+    </div>
+
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+      <input type="email" placeholder="Email" formControlName="email">
+    </p>
+    <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+      <div *ngIf="formControls.email.errors.required">Email is required</div>
+    </div>
+
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.address.errors }">
+      <input type="text" placeholder="address" formControlName="address">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.address.errors" class="help-block">
+      <div *ngIf="formControls.address.errors.required">Address is required</div>
+    </div>
+
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.dateOfBirth.errors }">
+      <input type="date" placeholder="dateOfBirth" formControlName="dateOfBirth">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.dateOfBirth.errors" class="help-block">
+      <div *ngIf="formControls.dateOfBirth.errors.required">Date Of Birth is required</div>
+    </div>
+
+    <p>
+      <input type="submit" value="Sign Up">
+    </p>
+  </form>
+  <p>
+    <input type="button" (click)="signIn()" value="Sign In">
+  </p>
+</div>
